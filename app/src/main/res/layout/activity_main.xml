@@ -16,6 +16,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
         android:gravity="center"
+
         />
 
     <AutoCompleteTextView
@@ -65,35 +66,81 @@
 
     </LinearLayout>
 
-    <RadioGroup
-        android:id="@+id/sort_radiogroup"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="208dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/GoodFood"
+        android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/rating_radiobutton"
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rating"
-            android:checked="true"
+            android:gravity="center"
+            android:text="Select the sorting category:"
+            android:textSize="20dp"
+            android:textColor="#FFFFFF"
             />
 
-        <RadioButton
-            android:id="@+id/difficulty_radiobutton"
-            android:layout_width="wrap_content"
+        <RadioGroup
+            android:id="@+id/sort_radiogroup"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Difficulty"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rating_radiobutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="true"
+                android:text="Rating"
+                android:textColor="#FFFFFF"
+                android:buttonTint="#FFFFFF"
+                />
+
+            <RadioButton
+                android:id="@+id/difficulty_radiobutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Difficulty"
+                android:textColor="#FFFFFF"
+                android:buttonTint="#FFFFFF"
+                />
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="185dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/MinimalistFood"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select the type of food:"
+            android:textAlignment="center"
+            android:textSize="20dp"
             />
 
-    </RadioGroup>
+        <Spinner
+            android:id="@+id/cuisine_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/cuisine_array"
+            android:padding="10dp"
+            android:textAlignment="center"
 
-    <Spinner
-        android:id="@+id/cuisine_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/cuisine_array"
-        />
+            />
+
+    </LinearLayout>
+
 
     <ToggleButton
         android:id="@+id/view_togglebutton"
