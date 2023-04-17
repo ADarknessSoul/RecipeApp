@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RecipeApp</string>
+    <string-array name="cuisine_array">
+        <item>Italian</item>
+        <item>Mexican</item>
+        <item>Chinese</item>
+        <item>Indian</item>
+        <item>Thai</item>
+    </string-array>
+
+</resources>
