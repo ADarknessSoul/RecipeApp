@@ -6,7 +6,20 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/mainLayout"
+    >
+
+    <ToggleButton
+        android:id="@+id/view_togglebutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOff="lIGHT ON"
+        android:textOn="LIGHT OFF"
+        android:layout_gravity="center"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/black"
+        />
 
     <TextView
         android:layout_width="match_parent"
@@ -36,12 +49,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:gravity="center"
             android:text="Select your preferences"
             android:textSize="20dp"
             android:textColor="#FFFFFF"
+            android:background="#A8000000"
             />
 
         <CheckBox
@@ -52,6 +65,7 @@
             android:text="Vegetarian"
             android:textColor="#FFFFFF"
             android:buttonTint="#FFFFFF"
+            android:background="#A8000000"
             />
 
         <CheckBox
@@ -62,6 +76,7 @@
             android:text="Gluten-Free"
             android:textColor="#FFFFFF"
             android:buttonTint="#FFFFFF"
+            android:background="#A8000000"
             />
 
     </LinearLayout>
@@ -80,6 +95,7 @@
             android:text="Select the sorting category:"
             android:textSize="20dp"
             android:textColor="#FFFFFF"
+            android:background="#A8000000"
             />
 
         <RadioGroup
@@ -90,14 +106,15 @@
 
             <RadioButton
                 android:id="@+id/rating_radiobutton"
-                android:layout_width="wrap_content"
+                android:layout_width="86dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="#A8000000"
+                android:buttonTint="#FFFFFF"
                 android:checked="true"
                 android:text="Rating"
-                android:textColor="#FFFFFF"
-                android:buttonTint="#FFFFFF"
-                />
+                android:textColor="#FFFFFF" />
 
             <RadioButton
                 android:id="@+id/difficulty_radiobutton"
@@ -107,6 +124,7 @@
                 android:text="Difficulty"
                 android:textColor="#FFFFFF"
                 android:buttonTint="#FFFFFF"
+                android:background="#A8000000"
                 />
 
         </RadioGroup>
@@ -116,9 +134,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="185dp"
+        android:layout_height="176dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/MinimalistFood"
         android:orientation="vertical">
 
         <TextView
@@ -126,8 +143,7 @@
             android:layout_height="wrap_content"
             android:text="Select the type of food:"
             android:textAlignment="center"
-            android:textSize="20dp"
-            />
+            android:textSize="20dp" />
 
         <Spinner
             android:id="@+id/cuisine_spinner"
@@ -139,16 +155,13 @@
 
             />
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/MinimalistFood"
+            />
+
     </LinearLayout>
-
-
-    <ToggleButton
-        android:id="@+id/view_togglebutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOff="List View"
-        android:textOn="Grid View"
-        />
 
 
 </LinearLayout>
