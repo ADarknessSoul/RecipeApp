@@ -8,4 +8,13 @@
         <item>Thai</item>
     </string-array>
 
+    <string-array name="foods_array">
+        <item>Sticky Coconut Chicken and Rice</item>
+        <item>Greek Chicken With Cucumber-Feta Salad</item>
+        <item>Thanksgiving Stuffing</item>
+        <item>Brothy Thai Curry With Silken Tofu and Herbs</item>
+        <item>Tajin Grilled Chicken</item>
+    </string-array>
+
+
 </resources>
