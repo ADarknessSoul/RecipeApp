@@ -4,23 +4,18 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.LinearLayout
-import android.widget.RadioButton
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
     var isBackgroundBlack = false
     private lateinit var searchField: AutoCompleteTextView
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -36,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         var radio2: RadioButton = findViewById(R.id.difficulty_radiobutton)
         var preferenceResults: TextView = findViewById(R.id.results_preferences)
         var sortingCategory: TextView = findViewById(R.id.results_sorting)
+        var resultOfSearch: TextView = findViewById(R.id.results_search)
+        var resultType: TextView = findViewById(R.id.results_type)
+        var resumeTitle: TextView = findViewById(R.id.resumeTitle)
 
         setupAutoCompleteTextView()
 
@@ -54,6 +52,12 @@ class MainActivity : AppCompatActivity() {
                 searchField.setHintTextColor(Color.WHITE)
                 selectFood.setTextColor(Color.WHITE)
                 spin.setBackgroundColor(Color.WHITE)
+                resumeTitle.setTextColor(Color.WHITE)
+                resultType.setTextColor(Color.WHITE)
+                preferenceResults.setTextColor(Color.WHITE)
+                sortingCategory.setTextColor(Color.WHITE)
+                resultOfSearch.setTextColor(Color.WHITE)
+
             } else {
                 backgroundLayer.setBackgroundColor(Color.WHITE)
                 btnLightMode.setBackgroundColor(Color.BLACK)
@@ -63,6 +67,12 @@ class MainActivity : AppCompatActivity() {
                 searchField.setTextColor(Color.BLACK)
                 searchField.setHintTextColor(Color.BLACK)
                 selectFood.setTextColor(Color.BLACK)
+                resumeTitle.setTextColor(Color.BLACK)
+                resultType.setTextColor(Color.BLACK)
+                preferenceResults.setTextColor(Color.BLACK)
+                sortingCategory.setTextColor(Color.BLACK)
+                resultOfSearch.setTextColor(Color.BLACK)
+
             }
 
 
@@ -111,6 +121,37 @@ class MainActivity : AppCompatActivity() {
             var baseText = "Sorting category: "
 
             if(isCheked) sortingCategory.text = baseText + radio2.text
+
+        }
+
+        searchField.addTextChangedListener(object : TextWatcher {
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                var baseText = "Result of search: "
+                resultOfSearch.text = baseText + p0
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+
+        })
+
+        spin.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                var baseText = "Type of food: "
+                val selectItem = spin.selectedItem.toString()
+                resultType.text = baseText + selectItem
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
 
         }
 

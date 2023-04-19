@@ -178,9 +178,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         >
 
         <TextView
+            android:id="@+id/resumeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -192,7 +195,7 @@
             android:id="@+id/results_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:text="Result of the search:"
             android:textSize="15dp"
             />
@@ -201,7 +204,7 @@
             android:id="@+id/results_preferences"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:text="Preferences:"
             android:textSize="15dp"
             />
@@ -210,7 +213,7 @@
             android:id="@+id/results_sorting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:text="Sorting category:"
             android:textSize="15dp"
             />
@@ -219,7 +222,7 @@
             android:id="@+id/results_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:text="Type of food:"
             android:textSize="15dp"
             />
